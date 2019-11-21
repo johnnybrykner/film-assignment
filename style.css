@@ -1,0 +1,95 @@
+.films {
+  perspective: 2000px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3rem;
+}
+
+.films article {
+  transition: 1s;
+  transform-style: preserve-3d;
+  height: 600px;
+}
+
+.films article.flipped {
+  transform: rotateY(180deg);
+}
+
+.films article span {
+  display: block;
+  font-weight: bold;
+}
+
+.button {
+  background-color: blue;
+  width: 25%;
+  right: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.flip-icon {
+  height: 100%;
+  width: 100%;
+}
+
+.card-side {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.poster-plot {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.poster-plot p {
+  flex-basis: 50%;
+  font-weight: bold;
+}
+
+.back {
+  background-color: #eee;
+  transform: rotateY(180deg);
+  border: none;
+  display: none;
+}
+
+.back.shown {
+  display: block;
+  z-index: 1;
+}
+
+.front {
+  background-color: #eee;
+}
+
+.front > * {
+  padding: 0 3rem;
+}
+
+.front img {
+  margin-right: 3rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  width: 70%;
+}
+
+.spinner {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  background-color: #fff;
+}
